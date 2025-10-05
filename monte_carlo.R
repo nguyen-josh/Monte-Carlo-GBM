@@ -231,7 +231,7 @@ server <- function(input, output, session) {
     })
   })
   
-  # Dynamic correlation matrix - FIXED for 6+ ETFs
+  # Dynamic correlation matrix - More than 6 ETF makes input boxes too small
   output$correlation_matrix <- renderUI({
     n <- input$num_etfs
     if (is.null(n)) return()
@@ -479,8 +479,7 @@ server <- function(input, output, session) {
     # Initialize results array
     portfolio_values <- matrix(0, num_simulations, n_periods)
     
-    # CORRECTED MATH: Calculate GBM parameters with proper tax drag treatment
-    # Convert arithmetic returns to log returns with multiplicative tax drag
+    # Calculate GBM parameters with proper tax drag treatment
     log_drifts <- numeric(n_etfs)
     gbm_sigmas <- numeric(n_etfs)
     
@@ -491,8 +490,7 @@ server <- function(input, output, session) {
       # Convert to log drift for GBM
       log_drifts[i] <- log(gross_factor_after_tax)
       
-      # For GBM, we need the volatility of log returns
-      # Approximation: σ_log ≈ σ_arith / (1 + r/2) for small volatilities
+      # For GBM, calculate the volatility of log returns
       # More accurate: σ_log = sqrt(log(1 + (σ_arith/(1+r))^2))
       arith_return <- etf_data$expected_return[i]
       arith_vol <- etf_data$volatility[i]
@@ -507,12 +505,10 @@ server <- function(input, output, session) {
     # Simulation progress tracking
     progress_step <- max(1, floor(num_simulations / 20))
     
-    # CONTRIBUTION TIMING NOTE:
     # Contributions are added BEFORE growth calculations to ensure proper compounding.
     # - Annual: Added at beginning of each year (maximum compounding benefit)
     # - Monthly: Added at beginning of each month
     # - Biweekly: Added every 2 weeks (26 times per year)
-    # This matches real-world investing where contributions grow from the moment they're deposited.
     
     for (sim in 1:num_simulations) {
       # Update progress bar
@@ -532,8 +528,7 @@ server <- function(input, output, session) {
       # Simulate each ETF
       for (t in 2:n_periods) {
         for (i in 1:n_etfs) {
-          # FIRST: Add contributions at the beginning of the period (before growth)
-          # This ensures contributions compound properly
+          # Add contributions at the beginning of the period (before growth)
           contribution_added <- FALSE
           
           if (etf_data$frequency[i] == 1) {
@@ -548,7 +543,6 @@ server <- function(input, output, session) {
             contribution_added <- TRUE
           } else if (etf_data$frequency[i] == 26) {
             # Biweekly: Contribute every 2 weeks (approximately every 0.46 months)
-            # Check if we've passed a 2-week interval
             months_elapsed <- (t - 1)
             biweekly_periods_elapsed <- floor(months_elapsed * 26 / 12)
             prev_months_elapsed <- max(0, t - 2)
@@ -560,8 +554,7 @@ server <- function(input, output, session) {
             }
           }
           
-          # THEN: Apply geometric Brownian motion growth
-          # This ensures contributions get the full benefit of compounding
+          # Apply geometric Brownian motion growth
           drift_term <- (log_drifts[i] - 0.5 * gbm_sigmas[i]^2) * dt
           diffusion_term <- gbm_sigmas[i] * sqrt(dt) * W[t, i]
           etf_values[t, i] <- etf_values[t-1, i] * exp(drift_term + diffusion_term)
