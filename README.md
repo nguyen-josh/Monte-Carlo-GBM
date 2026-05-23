@@ -4,7 +4,7 @@ A Markov regime-switching Monte Carlo engine for retirement-portfolio projection
 with an interactive Streamlit front-end. The model simulates thousands of
 lifecycle paths through Bull / Bear / Crisis market regimes to estimate the
 probability that a portfolio survives through a target age,
-along with nominal and inflation-adjusted percentile bands. The original, simpler version built in R/Shiny that was converted to Python and improved to a Markov model is also included.
+along with nominal and inflation-adjusted percentile bands. The original, simpler version built in R/Shiny that was converted to Python and improved to a Markov model is also included for reference.
 
 > **Disclaimer:** This project makes simplifying assumptions and should not be utilized to make real investment or retirement decisions.
 
