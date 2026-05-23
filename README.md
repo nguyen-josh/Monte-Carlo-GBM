@@ -7,10 +7,8 @@ probability that a portfolio survives through a target age,
 along with nominal and inflation-adjusted percentile bands. The original, simpler version built in R/Shiny that was converted to Python and improved to a Markov model is also included for reference.
 
 > **Disclaimer:** This project makes simplifying assumptions and should not be utilized to make real investment or retirement decisions.
-
-
-<img width="400" height="239" alt="image" src="https://github.com/user-attachments/assets/9fbc8c29-a2d2-42bb-913d-2e080d5644fe" />
-
+> 
+<img width="400" height="239" alt="Screen Recording 2026-05-22 210013" src="https://github.com/user-attachments/assets/90129f31-a4d2-418b-9ded-0bcd8b0e746c" />
 
 ## What it does
 
