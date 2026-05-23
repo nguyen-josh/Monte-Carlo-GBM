@@ -8,7 +8,7 @@ along with nominal and inflation-adjusted percentile bands. The original, simple
 
 > **Disclaimer:** This project makes simplifying assumptions and should not be utilized to make real investment or retirement decisions.
 
-<img width="400" height="239" alt="Screen Recording 2026-05-22 210013" src="https://github.com/user-attachments/assets/90129f31-a4d2-418b-9ded-0bcd8b0e746c" />
+https://github.com/user-attachments/assets/fe82af98-7acd-4928-b02c-3a6508a78fe0
 
 ## What it does
 
