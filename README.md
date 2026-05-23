@@ -104,8 +104,11 @@ eigenvector fallback. See the **Help & Documentation** page in the app for more.
   real markets.
 - Transition probabilities, returns, and volatilities are fixed point estimates
   (no parameter uncertainty).
-- Taxes are modeled only as a flat drag from dividends; cost basis and tax lots are not tracked, ignoring tax reduction opportunities such as tax loss harvesting or state-tax-exempt treasuries.
-- Options, margin, managed futures, leveraged assets, real estate, precious metals, and other asset classes are not modeled.
+- Taxes are modeled only as a flat drag from dividends; cost basis and tax lots are not tracked, meaning taxes during the drawdown period are not modeled.
+- Tax reduction opportunities, such as tax loss harvesting or state-tax-exempt treasuries, are not modeled.
+- Tax-advantaged accounts such as IRAs, HSAs, 401(k)s, and 529 plans are not modeled. Prioritizing these accounts may reduce taxable income and tax drag, ergo increasing gains and net worth.
+- Leverage, margin, managed futures, real estate, precious metals, crypto, and other asset classes contributing to net worth are not modeled.
+- The simulation assumes no selling occurs until the drawdown phase. This ignores any selling during the accumulation phase that often occurs, such as funding the downpayment for a mortgage or similar major expenditure.
 - Reported survival probabilities and percentiles are Monte Carlo point
   estimates and carry sampling error.
 
