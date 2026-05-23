@@ -119,9 +119,9 @@ Monte-Carlo-GBM/
 ├── .gitignore
 ├── LICENSE
 ├── README.md
-├── R
+├── R/
 │   └── monte_carlo.R
-└── Python_version/
+└── Python/
     ├── requirements.txt
     ├── engine.py 
     └── app.py  
