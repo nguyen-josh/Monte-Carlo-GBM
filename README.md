@@ -8,6 +8,10 @@ along with nominal and inflation-adjusted percentile bands. The original, simple
 
 > **Disclaimer:** This project makes simplifying assumptions and should not be utilized to make real investment or retirement decisions.
 
+
+<img width="400" height="239" alt="image" src="https://github.com/user-attachments/assets/9fbc8c29-a2d2-42bb-913d-2e080d5644fe" />
+
+
 ## What it does
 
 - **Three-regime Markov chain** (Bull, Bear, Crisis) with user-supplied monthly
