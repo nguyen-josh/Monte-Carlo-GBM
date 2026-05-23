@@ -115,14 +115,16 @@ eigenvector fallback. See the **Help & Documentation** page in the app for more.
 ## Project structure
 
 ```
-.
-├── engine.py          # Simulation back-end
-├── app.py             # Streamlit front-end
-├── requirements.txt
-├── README.md
+Monte-Carlo-GBM/
+├── .gitignore
 ├── LICENSE
-├── tests/             # (recommended) pytest unit tests
-└── monte_carlo.R      # original R/Shiny application this was built on
+├── README.md
+├── R
+│   └── monte_carlo.R
+└── Python_version/
+    ├── requirements.txt
+    ├── engine.py 
+    └── app.py  
 ```
 
 ## License
