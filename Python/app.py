@@ -51,7 +51,7 @@ if page == "Portfolio Setup":
     st.title("📈 Portfolio Simulator — Setup")
 
     st.subheader("Life & Expenses")
-    c = st.columns(6)
+    c = st.columns([0.9, 1.1, 1.2, 1.6, 1.3, 1])
     current_age = c[0].number_input("Current Age", 18, 100, 30)
     retirement_age = c[1].number_input("Target Retire Age", 18, 100, 65)
     target_survival_age = c[2].number_input("Target Survival Age", 50, 120, 90)
