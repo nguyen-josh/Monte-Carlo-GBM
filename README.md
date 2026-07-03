@@ -111,8 +111,8 @@ eigenvector fallback. See the **Help & Documentation** page in the app for more.
 - Tax-advantaged accounts such as IRAs, HSAs, 401(k)s, and 529 plans are not modeled. Prioritizing these accounts may reduce taxable income and tax drag, thereby increasing gains and net worth.
 - Leverage, margin, options, individual stocks, managed futures, real estate, precious metals, crypto, and other asset classes contributing to net worth are not modeled.
 - The simulation assumes no selling occurs until the drawdown phase. This ignores any selling during the accumulation phase that often occurs, such as funding the downpayment for a mortgage or similar major expenditure.
-- Inflation is assumed to be constant annually, with the default at 3%. Hyper-inflation is not unheard of—e.g., Argentina—and there was large inflation after the COVID-19 pandemic. Deflation is also not unheard of and not modeled; e.g., Japan. The model is limited to inflation in one market; inflation in other markets will affect equities held in these markets.
-- This model assumes markets are predictable and there are no drastic events causing disruption, like world wars or global market crises.
+- Inflation is assumed to be constant annually, with the default at 3%. Hyper-inflation and deflation are not unheard of—Argentina and Japan. The model is limited to inflation in one market; inflation in other markets will affect equities held in these markets.
+- This model assumes markets are predictable and there are no drastic events causing disruption, like wars or global market crises.
 - Reported survival probabilities and percentiles are Monte Carlo point estimates and carry sampling error.
 
 ## Project structure
