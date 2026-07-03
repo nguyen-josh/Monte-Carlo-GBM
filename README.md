@@ -104,15 +104,13 @@ eigenvector fallback. See the **Help & Documentation** page in the app for more.
 ## Limitations (don't use to make real investment decisions)
 
 - Within-regime returns are log-normal, which understates tail risk relative to real markets
-- The user provides the transition probabilities for market states, and the model assumes transitions probabilities are unchanging; realistically, transition probabilities are unknown and fluctuate.
-- Transition probabilities, returns, and volatilities are fixed point estimates, meaning there is no parameter uncertainty
+- Transition probabilities, returns, and volatilities are fixed point estimates, and assumed to be known meaning there is no parameter uncertainty or fluctuation
 - Taxes are modeled only as a flat drag from dividends; cost basis and tax lots are not tracked, meaning taxes during the drawdown period are not modeled. Income and tax brackets are not modeled either.
 - Tax reduction opportunities, such as tax loss harvesting or state-tax-exempt treasuries, are not modeled.
 - Tax-advantaged accounts such as IRAs, HSAs, 401(k)s, and 529 plans are not modeled. Prioritizing these accounts may reduce taxable income and tax drag, thereby increasing gains and net worth.
 - Leverage, margin, options, individual stocks, managed futures, real estate, precious metals, crypto, and other asset classes contributing to net worth are not modeled.
 - The simulation assumes no selling occurs until the drawdown phase. This ignores any selling during the accumulation phase that often occurs, such as funding the downpayment for a mortgage or similar major expenditure.
 - Inflation is assumed to be constant annually, with the default at 3%. Hyper-inflation and deflation are not unheard of—Argentina and Japan. The model is limited to inflation in one market; inflation in other markets will affect equities held in these markets.
-- This model assumes markets are predictable and there are no drastic events causing disruption, like wars or global market crises.
 - Reported survival probabilities and percentiles are Monte Carlo point estimates and carry sampling error.
 
 ## Project structure
