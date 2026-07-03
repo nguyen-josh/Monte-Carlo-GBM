@@ -7,7 +7,7 @@ lifecycle paths through Bull / Bear / Crisis market regimes to estimate the
 probability that a portfolio survives through a target age,
 along with nominal and inflation-adjusted percentile bands. The original, simpler version I built in R/Shiny based on a for loop was converted to Python and improved to a vectorized Markov model. Both are included in the GitHub repository for reference.
 
-> **Disclaimer:** This project makes simplifying assumptions and should not be utilized to make real investment or retirement decisions.
+> **Disclaimer:** This project makes simplifying assumptions and should not be used to make real investment or retirement decisions.
 
 https://github.com/user-attachments/assets/fe82af98-7acd-4928-b02c-3a6508a78fe0
 
@@ -103,17 +103,14 @@ eigenvector fallback. See the **Help & Documentation** page in the app for more.
 
 ## Limitations
 
-- Within-regime returns are log-normal, which understates tail risk relative to
-  real markets.
-- Transition probabilities, returns, and volatilities are fixed point estimates
-  (no parameter uncertainty).
-- Taxes are modeled only as a flat drag from dividends; cost basis and tax lots are not tracked, meaning taxes during the drawdown period are not modeled.
+- Within-regime returns are log-normal, which understates tail risk relative to real markets.
+- Transition probabilities, returns, and volatilities are fixed point estimates, meaning there is no parameter uncertainty.
+- Taxes are modeled only as a flat drag from dividends; cost basis and tax lots are not tracked, meaning taxes during the drawdown period are not modeled. Income and tax brackets are not modeled either.
 - Tax reduction opportunities, such as tax loss harvesting or state-tax-exempt treasuries, are not modeled.
-- Tax-advantaged accounts such as IRAs, HSAs, 401(k)s, and 529 plans are not modeled. Prioritizing these accounts may reduce taxable income and tax drag, ergo increasing gains and net worth.
+- Tax-advantaged accounts such as IRAs, HSAs, 401(k)s, and 529 plans are not modeled. Prioritizing these accounts may reduce taxable income and tax drag, thereby increasing gains and net worth.
 - Leverage, margin, managed futures, real estate, precious metals, crypto, and other asset classes contributing to net worth are not modeled.
 - The simulation assumes no selling occurs until the drawdown phase. This ignores any selling during the accumulation phase that often occurs, such as funding the downpayment for a mortgage or similar major expenditure.
-- Reported survival probabilities and percentiles are Monte Carlo point
-  estimates and carry sampling error.
+- Reported survival probabilities and percentiles are Monte Carlo point estimates and carry sampling error.
 
 ## Project structure
 
